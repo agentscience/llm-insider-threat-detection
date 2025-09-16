@@ -7,18 +7,18 @@ A two-stage pipeline for detecting insider threats in enterprise email communica
 ### Research Objectives
 This study addresses three central research questions: *Submitted to 1st Open Conference on AI Agents for Science (agents4science 2025).*
 
-1.  [cite_start]**Can a scalable, hybrid risk-scoring model (Stage 1) effectively filter a large volume of communication logs to identify a small, high-risk subset of potentially malicious activities?** [cite: 18, 65]
-2.  [cite_start]**How can Large Language Models (LLMs) be applied in a second stage (Stage 2) to provide deep semantic analysis and generate actionable, human-readable SOC-style narratives for these high-risk events?** [cite: 19, 66]
-3.  [cite_start]**Does this two-stage pipeline provide a practical and cost-effective framework that improves upon traditional anomaly detection by incorporating semantic context and intent analysis, while aligning with real-world Security Operations Centre (SOC) workflows?** [cite: 20, 68]
+1.  **Can a scalable, hybrid risk-scoring model (Stage 1) effectively filter a large volume of communication logs to identify a small, high-risk subset of potentially malicious activities?** 
+2.  **How can Large Language Models (LLMs) be applied in a second stage (Stage 2) to provide deep semantic analysis and generate actionable, human-readable SOC-style narratives for these high-risk events?** 
+3.  **Does this two-stage pipeline provide a practical and cost-effective framework that improves upon traditional anomaly detection by incorporating semantic context and intent analysis, while aligning with real-world Security Operations Centre (SOC) workflows?** 
 
 ### Methodology Overview
-[cite_start]Our approach is a two-stage pipeline designed to mirror the workflow of a modern Security Operations Centre (SOC), balancing automated filtering with high-fidelity analysis[cite: 18, 19, 46].
+Our approach is a two-stage pipeline designed to mirror the workflow of a modern Security Operations Centre (SOC), balancing automated filtering with high-fidelity analysis.
 
 * **Stage 1: Behavioural Anomaly Filtering**
-    This stage processes the entire dataset at scale. [cite_start]We perform feature engineering on email metadata (e.g., size, recipients, attachments) and user psychometric profiles[cite: 122, 123, 127, 128]. [cite_start]A hybrid risk score is calculated for each email by combining rule-based flags, statistical deviations, and an unsupervised **Isolation Forest** anomaly score[cite: 18, 137, 140, 142]. [cite_start]This allows us to efficiently filter millions of events down to a small, manageable subset of high-risk candidates (e.g., the top 1%)[cite: 159, 181].
+    This stage processes the entire dataset at scale. We perform feature engineering on email metadata (e.g., size, recipients, attachments) and user psychometric profiles. A hybrid risk score is calculated for each email by combining rule-based flags, statistical deviations, and an unsupervised **Isolation Forest** anomaly score. This allows us to efficiently filter millions of events down to a small, manageable subset of high-risk candidates (e.g., the top 1%).
 
 * **Stage 2: LLM Semantic Review**
-    The high-risk subset from Stage 1 is passed to this stage for in-depth analysis. We use a Large Language Model (LLM) to act as a virtual SOC analyst. For each high-risk email, a structured prompt containing its metadata and risk factors is sent to the LLM. [cite_start]The model then generates a structured output that includes a concise SOC-style narrative, a classification of potential intent (e.g., Data Exfiltration), and a suggested next action for a human analyst[cite: 19, 164, 195].
+    The high-risk subset from Stage 1 is passed to this stage for in-depth analysis. We use a Large Language Model (LLM) to act as a virtual SOC analyst. For each high-risk email, a structured prompt containing its metadata and risk factors is sent to the LLM. The model then generates a structured output that includes a concise SOC-style narrative, a classification of potential intent (e.g., Data Exfiltration), and a suggested next action for a human analyst.
 
 ### Project Structure
 This repository is organized into a modular pipeline, with each script performing a specific task.
